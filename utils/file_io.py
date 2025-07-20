@@ -19,6 +19,7 @@ def load_data():
 
 # データの保存
 def save_data(data):
+    os.makedirs(os.path.dirname(DATA_PATH), exist_ok=True)  # ← ここを追加
     with open(DATA_PATH, "w", encoding="utf-8") as f:
         json.dump(data, f, indent=2, ensure_ascii=False)
 
